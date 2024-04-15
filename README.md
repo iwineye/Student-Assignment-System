@@ -2,7 +2,7 @@
 
 This project is a student assignment system built on SQL database containing user table and assignment table, featuring super user (teacher) privileges, and a Flask backend with JWT authentication. Additionally, a Postman JSON response file is attached for testing purposes.
 
-Stundents can view the assignments allotted to them by registering and login . Teacher can create, delete and modify the assignment for each student. This can be further 
+Students can view the assignments allotted to them by registering and login. Teacher can create, delete and modify the assignment for each student. This can be further 
 expanded by adding a feature to display individual grades with minor modifications.
 
 ## Features
