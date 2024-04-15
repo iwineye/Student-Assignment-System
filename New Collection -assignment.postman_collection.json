@@ -1,0 +1,727 @@
+{
+	"info": {
+		"_postman_id": "",
+		"name": "New Collection -assignment",
+		"description": "### Retrieve Assignments\n\nRetrieve assignments associated with the currently authenticated user.\n\n- **URL**: `/assignments`\n- **Method**: `GET`\n- **Authentication**: JSON Web Token (JWT) required.\n    \n\n#### Request Headers\n\n- `Authorization`: Bearer Token (JWT)\n    \n\n#### Responses\n\n- **200 OK**: Successful retrieval of assignments.\n    - Body:\n\nEndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33092409"
+	},
+	"item": [
+		{
+			"name": " http://127.0.0.1:5000/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODQyMjU3NywianRpIjoiYjI0NmVjZjYtNGViMy00MTdiLTg2ZDQtY2Q0ODIwOWJhN2QwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MTAyLCJuYmYiOjE3MDg0MjI1NzcsImNzcmYiOiI5ZDIwNjNiMi00Y2NhLTQyNjQtOTY1My1jYzFkMWY5NjRlMTciLCJleHAiOjE3MDg0MjM0Nzd9.fueXjk-Cqt3rBmwcI7s6Giq66wNVFS0Gs9kaDiICbfM",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"new_user\",\r\n    \"password\":\"new_password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"register"
+					]
+				},
+				"description": "**REGISTER**  \nAPI ENDPOINT TO REGISTER A USER THAT ACCEPTS ANY USERNAME AND PASSWORD"
+			},
+			"response": [
+				{
+					"name": "EXAMPLE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODQyMjU3NywianRpIjoiYjI0NmVjZjYtNGViMy00MTdiLTg2ZDQtY2Q0ODIwOWJhN2QwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MTAyLCJuYmYiOjE3MDg0MjI1NzcsImNzcmYiOiI5ZDIwNjNiMi00Y2NhLTQyNjQtOTY1My1jYzFkMWY5NjRlMTciLCJleHAiOjE3MDg0MjM0Nzd9.fueXjk-Cqt3rBmwcI7s6Giq66wNVFS0Gs9kaDiICbfM",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"new_user1\",\r\n    \"password\":\"new_password1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"register"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "API",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Feb 2024 21:21:48 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"user_created_successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\":\"new_user\",\r\n\"password\":\"new_password\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				},
+				"description": "**API ENDPOINT TO LOGIN**\n\nAPI ACCEPTS USERNAME AND PASSWORD AND VERIFIES WITH THE DATABASE  \nSUCCESSFUL VERIFICATION RESULTS IN HTTP 200  \nUNSUCCESSFUL VERIFICATION RESULTS IN HTTP 401"
+			},
+			"response": [
+				{
+					"name": "EXAMPLE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\":\"new_user\",\r\n\"password\":\"new_password\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "TEACHER LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"TEACHER_01\",\r\n    \"password\":\"CLASS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				},
+				"description": "##SPECIAL ACCESS\n\nAPI ACCEPTS USERNAME AND PASSWORD AND VERIFIES WITH THE DATABASE FOR SUPER USER  \nUNSUCCESSFUL VERIFICATION RESULTS IN HTTP 403"
+			},
+			"response": [
+				{
+					"name": "EXAMPLE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"TEACHER_01\",\r\n    \"password\":\"CLASS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Feb 2024 21:23:14 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "352"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODQ2NDE5NCwianRpIjoiMjdiYzEyZGQtMWEzNi00YzU5LWI5ZTEtNTc3NjVjMjdmMWY3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MTEwLCJuYmYiOjE3MDg0NjQxOTQsImNzcmYiOiJjNzg2ODEwOS1iZmNlLTRlNGYtOTU4YS0zMGJkZTk5NjFiYTgiLCJleHAiOjE3MDg0NjUwOTR9.WIxbEvFxSmb2xduRs5cUgdwJWlDvGY7IhlTPwJrryXk\"\n}"
+				}
+			]
+		},
+		{
+			"name": "CREATE ASSIGNMENT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODQ1NjA2NywianRpIjoiYTY2ZmU0MzYtOTdkZS00YWY3LTlmNzAtNjVlNDI4MjdkN2Q3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MTEwLCJuYmYiOjE3MDg0NTYwNjcsImNzcmYiOiIzZWRjM2EyOC04MWIyLTQzZjgtYmZiMy0xNGQ2YTQ5ZWY4MjQiLCJleHAiOjE3MDg0NTY5Njd9.ix_J1OISfYNdGblOpbTZNySsG6MR4oveZosu1B_U2rM",
+						"description": "CREATE ASSIGNMENTS INDIVIDUALLY WITH SPECIAL ACCESS ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"input_user_id\":\"114\",\r\n    \"subject\":\"MACHINES\",\r\n    \"description\":\"DC MOTOS\",\r\n    \"due_date\":\"2024-03-01\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/create_assignment",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"create_assignment"
+					]
+				},
+				"description": "**CREATE ASSIGNMENTS**  \nAPI END POINT THAT CREATES NEW ASSIGNMENT WITH THE SPECIFIC USER BASED ON JSON INPUTS ID,SUBJECT,DESCRIPTION,DUE DATE\n\nTHIS WORKS ONLY FOR SUPER USER WITH SPECIAL ACCESS AND REQUIRES VERIFICATION\n\nWRONG INPUTS RESULT IN DENIAL OF ACCESS WITH RESPONSE HTTP 404"
+			},
+			"response": [
+				{
+					"name": "EXAMPLE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODQ1NjA2NywianRpIjoiYTY2ZmU0MzYtOTdkZS00YWY3LTlmNzAtNjVlNDI4MjdkN2Q3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MTEwLCJuYmYiOjE3MDg0NTYwNjcsImNzcmYiOiIzZWRjM2EyOC04MWIyLTQzZjgtYmZiMy0xNGQ2YTQ5ZWY4MjQiLCJleHAiOjE3MDg0NTY5Njd9.ix_J1OISfYNdGblOpbTZNySsG6MR4oveZosu1B_U2rM",
+								"description": "CREATE ASSIGNMENTS INDIVIDUALLY WITH SPECIAL ACCESS ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"input_user_id\":\"114\",\r\n    \"subject\":\"MACHINES\",\r\n    \"description\":\"DC MOTOS\",\r\n    \"due_date\":\"2024-03-01\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/create_assignment",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"create_assignment"
+							]
+						}
+					},
+					"status": "UNAUTHORIZED",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Feb 2024 21:23:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"Token has expired\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DELETE ASSIGNMENT",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODQ1ODA4MiwianRpIjoiYTlkYmY1MmEtY2Q1Ni00YjkwLTljYTctODMzYWZkZDNkMjIwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MTEwLCJuYmYiOjE3MDg0NTgwODIsImNzcmYiOiJkNDgyZDVmZi0yNTFlLTQ2YzQtYjMxZS0wMmJlN2FhNjQyOGUiLCJleHAiOjE3MDg0NTg5ODJ9.eX8XZgxUEGsPJQ3hR0g-vxPVrQmiyRGJ7ai0JMkSfCA",
+						"description": "DELETE ASSIGNMENTS WITH SPECIAL ACCESS",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/assignments/109",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"assignments",
+						"109"
+					]
+				},
+				"description": "**DELETE ASSIGNMENTS**  \nAPI END POINT THAT CREATES NEW ASSIGNMENT WITH THE SPECIFIC USER BASED ON INPUT ID\n\nTHIS WORKS ONLY FOR SUPER USER WITH SPECIAL ACCESS AND REQUIRES VERIFICATION\n\nSUCCESSFULL VERIFICATION INVOLVES DENIAL IN ACCESS WITH HTTP 400"
+			},
+			"response": [
+				{
+					"name": "DELETE EXAMPLE",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODQ2NDE5NCwianRpIjoiMjdiYzEyZGQtMWEzNi00YzU5LWI5ZTEtNTc3NjVjMjdmMWY3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MTEwLCJuYmYiOjE3MDg0NjQxOTQsImNzcmYiOiJjNzg2ODEwOS1iZmNlLTRlNGYtOTU4YS0zMGJkZTk5NjFiYTgiLCJleHAiOjE3MDg0NjUwOTR9.WIxbEvFxSmb2xduRs5cUgdwJWlDvGY7IhlTPwJrryXk",
+								"description": "DELETE ASSIGNMENTS WITH SPECIAL ACCESS",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/assignments/108",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"assignments",
+								"108"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Feb 2024 21:28:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Assignment deleted successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "user login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"PRITAM\",\r\n    \"password\":\"sdaeq\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				},
+				"description": "**LOGIN API**\n\nACCEPTS ANY USER NAME AND PASSWORD AND VERIFIES WITH THE DATABASE\n\nA MATCH WOULD RESULT HTTP 200 , JWT TOKEN IS GENERATED .\n\nWRONG CREDENTIALS WOULD RESULT IN HTTP 400"
+			},
+			"response": [
+				{
+					"name": "EXAMPLE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"PRITAM\",\r\n    \"password\":\"sdaeq\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Feb 2024 21:16:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "352"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODQ2Mzc3NSwianRpIjoiZTliMzUyMDAtNzZmZS00MzcwLWI1M2QtMjE0MTExNzFkMjFjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MTA1LCJuYmYiOjE3MDg0NjM3NzUsImNzcmYiOiJkY2FlN2E2Yi0zNjkwLTQxZWYtOGJjYy0xMzMwMDg1ZGVhYmUiLCJleHAiOjE3MDg0NjQ2NzV9.qIi6VB895N9id-KoAmyij8qTwkI4dwzzD7gZTQgNdbA\"\n}"
+				}
+			]
+		},
+		{
+			"name": "view assignments for user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODQ1OTY3NCwianRpIjoiMGRlMjI3NWItNDU4NC00NThkLWJiMDItZjU1ZDdkNjhmYjBhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MTA1LCJuYmYiOjE3MDg0NTk2NzQsImNzcmYiOiI1MjQ3ODQwMS02NTE1LTQ5ZDUtYjQ0NS04ODQwMjk4OGZlNjIiLCJleHAiOjE3MDg0NjA1NzR9.z9wVLgsRbrMjkyUyC2rXfHy9zrTHXf6mo2v1C0Dt1Tg",
+						"description": "Checking the assignment status for the user with the input",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/assignments",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"assignments"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "view assignments for user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODQ1OTY3NCwianRpIjoiMGRlMjI3NWItNDU4NC00NThkLWJiMDItZjU1ZDdkNjhmYjBhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MTA1LCJuYmYiOjE3MDg0NTk2NzQsImNzcmYiOiI1MjQ3ODQwMS02NTE1LTQ5ZDUtYjQ0NS04ODQwMjk4OGZlNjIiLCJleHAiOjE3MDg0NjA1NzR9.z9wVLgsRbrMjkyUyC2rXfHy9zrTHXf6mo2v1C0Dt1Tg",
+								"description": "Checking the assignment status for the user with the input",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/assignments",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"assignments"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "WRONG  LOGIN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "WHEN WRONG USER TRIES TO ACCESS ADMIN FEATURES"
+			},
+			"response": [
+				{
+					"name": "WRONG  LOGIN",
+					"originalRequest": {
+						"method": "GET",
+						"header": []
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "WRONG_ACCESS",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "wrong_attempt",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODQ2Mzc3NSwianRpIjoiZTliMzUyMDAtNzZmZS00MzcwLWI1M2QtMjE0MTExNzFkMjFjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MTA1LCJuYmYiOjE3MDg0NjM3NzUsImNzcmYiOiJkY2FlN2E2Yi0zNjkwLTQxZWYtOGJjYy0xMzMwMDg1ZGVhYmUiLCJleHAiOjE3MDg0NjQ2NzV9.qIi6VB895N9id-KoAmyij8qTwkI4dwzzD7gZTQgNdbA",
+								"description": "wrong user trying to access admin features",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/create_assignment",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"create_assignment"
+							]
+						}
+					},
+					"status": "FORBIDDEN",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 20 Feb 2024 21:18:48 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Unauthorized\"\n}"
+				}
+			]
+		}
+	]
+}
